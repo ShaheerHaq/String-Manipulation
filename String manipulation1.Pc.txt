@@ -1,0 +1,30 @@
+DECLARE String1 :STRING
+DECLARE String2 :STRING
+DECLARE NotChar  :CHARACTER
+DECLARE NextChar :CHARACTER
+DECLARE Count :INTEGER
+DECLARE NoOfChar : INTEGER
+
+String1 = ""
+String2 = ""
+NotChar = ''
+NextChar =''
+Count = 0
+NoOfChar = 0
+
+OUTPUT "Enter the string: "
+INPUT String1
+NoOfChar=LENGTH(String1)
+
+OUTPUT "Enter which character to remove: "
+INPUT NotChar
+
+For Count = 1 to NoOfChar
+    NextChar = MID(String1,Counter,1)
+    IF NextChar <> NotChar
+      THEN
+        String2 = String2 & NextChar
+    END IF
+END FOR
+OUTPUT "Your text is: " & String2
+

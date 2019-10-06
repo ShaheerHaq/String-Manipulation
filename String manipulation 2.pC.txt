@@ -1,0 +1,26 @@
+DECLARE String1 :STRING
+DECLARE String2 :STRING
+DECLARE FinalText :STRING
+DECLARE FirstWord :STRING
+DECLARE SecondWord :STRING
+DECLARE SpacePos :INTEGER
+
+String1 = ""
+String2 = ""
+FinalText = ""
+FirstWord = ""
+SecondWord = ""
+SpacePos = 0
+
+OUTPUT "Enter String 1: "
+INPUT String1
+SpacePos = LOCATE(String1,' ')
+FirstWord = LEFT(String1, SpacePos-1)
+
+OUTPUT "Enter String 2: "
+INPUT String2
+SpacePos = LOCATE(String2, ' ')
+SecondWord = RIGHT(String2, LENGTH(String2)-SpacePos)
+
+FinalText = FirstWord & ' ' & SecondWord
+OUTPUT "Your final text is: " & FinalText
