@@ -1,0 +1,26 @@
+DECLARE String1 : STRING
+DECLARE NextChar : CHARACTER
+DECLARE Count : INTEGER
+DECLARE Digit : INTEGER
+DECLARE Alpha : INTEGER
+
+String1 = ""
+NextChar = ''
+COunt = 0
+Digit = 0
+Alpha = 0
+
+OUTPUT "Enter the String: "
+INPUT String1
+FOR Count = 1 to LENGTH(String1)
+    NextChar = MID(String1, Count, 1)
+    IF NextChar > '0' AND NextChar <= '9'
+      THEN
+        Digit = Digit + 1
+      ELSE
+        Alpha = Alpha + 1
+    END IF
+ENDFOR
+OUTPUT "No. of digits: " & Digit
+OUTPUT "NO. of alphabets: " & Alpha
+   
