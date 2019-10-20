@@ -1,0 +1,32 @@
+DECLARE String1 : STRING
+DECLARE String2 : STRING
+DECLARE Char1 : CHRACTER
+DECLARE Char2 : CHRACTER
+DECLARE NextChar : CHRACTER
+DECLARE Count : INTEGER
+
+String1 = ""
+String2 = ""
+Char1 = ''
+Char2 = ''
+NextChar = ''
+Count = 0
+
+OUTPUT "Enter string: "
+INPUT String1
+
+OUTPUT "Enter character to remove: "
+INPUT Char1
+
+OUTPUT "Enter character to replace: "
+INPUT Char2
+
+FOR Count = 1 to LENGTH(String1)
+    NextChar = MID(String1, Count, 1)
+    IF NextChar = Char1
+      THEN
+        NextChar = Char2
+    ENDIF
+    String2 = String2 & NextChar
+END FOR
+OUTPUT "Your Final string is = " & String2
