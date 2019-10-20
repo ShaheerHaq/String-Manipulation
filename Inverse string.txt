@@ -1,0 +1,20 @@
+DECLARE String1 : STRING
+DECLARE String2 : STRING
+DECLARE NextChar : CHARACTER
+DECLARE Count : INTEGER
+
+String1 = ""
+String2 = ""
+NextChar = ''
+Count = 0
+
+OUTPUT "Enter the string: "
+INPUT String1
+
+FOR Count =LENGTH(String1) to 1 STEP-1
+    NextChar = MID(String1,Count,1)
+    String2 = String2 & NextChar
+END FOR
+
+OUTPUT "Your inversed string is " & String2
+OUTPUT
