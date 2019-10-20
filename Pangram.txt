@@ -1,0 +1,29 @@
+DECLARE String1 : STRING
+DECLARE Alphabets : STRING
+DECLARE NextChar : CHARACTER
+DECLARE Count : INTEGER
+DECLARE IsPangram : BOOLEAN
+
+String1 = ""
+Alphabets = "abcdefghijklmnopqrstuvwxyz"
+NextChar = ''
+Count = 0
+IsPangram = TRUE
+
+OUTPUT "Enter the string: "
+INPUT String1
+String1 = LOWER(String1)
+
+For Count = 1 to LENGTH(Alphabets)
+    NextChar = MID(Alphabets, Count,1)
+    IF LOCATE(String1, NextChar) = 0
+       THEN IsPangram = FALSE
+    END IF
+END FOR
+
+IF IsPangram = TRUE 
+   THEN 
+     OUTPUT "It is a pangram"
+   ELSE
+     OUTPUT "It is not a pangram"
+END IF
