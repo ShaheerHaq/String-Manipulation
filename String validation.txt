@@ -1,0 +1,70 @@
+DECLARE String1 : STRING
+DECLARE Count : INTEGER
+DECLARE nextChar : CHARACTER
+DECLARE IsValid : BOOLEAN
+
+
+String1 = ""
+nextChar = ''
+Count = 0
+IsValid = TRUE
+
+
+OUTPUT "Input a string in AAAA-999-aa format: "
+INPUT String1
+
+IF LEN(String1) <> 11
+  THEN
+    IsValid = FALSE
+ENDIF
+
+IF IsValid = TRUE
+   THEN
+     IF MID(String1,5,1)<>'-' OR MID(String1,9,1)<>'-'
+        THEN
+          IsValid = FALSE
+     END IF
+END IF
+
+IF IsValid = TRUE
+   THEN
+     FOR Count = 1 TO 4
+         NextChar = MID(String1,Count,1)
+         IF NextChar < 'A' OR NextChar > 'Z'
+            THEN
+              IsValid = FALSE
+              Exit For
+         END IF
+     END FOR
+END IF
+
+IF IsValid = TRUE
+   THEN
+     FOR Count = 6 TO 8
+         NextChar = MID(String1, Count,1)
+         IF NextChar < '0' OR NextChar > '9'
+            THEN 
+              IsValid = FALSE
+              Exit For
+         END IF
+     END FOR
+END IF
+
+IF IsValid = TRUE
+   THEN 
+     FOR Count = 10 TO 11
+         NextChar = MID(String1, Count,1)
+         IF NextChar < 'a' OR NextChar >'z'
+            THEN 
+              IsValid = FALSE
+              ExitFor
+         END IF
+     END FOR
+END IF
+
+IF IsValid = TRUE
+   THEN 
+     OUTPUT "It is a valid string"
+   ELSE
+     OUTPUT "It is not a valid string"
+END IF  
